@@ -21,7 +21,7 @@ if (DEBUG) {
   console.log(`Timeout set to ${args.nodeProcessWrapperTimeout}`);
 }
 
-const spawnArgs = [ '-c', `${args.cmd} ${pArgs.split(' ').map(arg => `"${arg}"`).join(" ")}`];
+const spawnArgs = [ '-c', `${args.cmd} ${pArgs}` ];
 if (process.env.INJECT_NODEPROF){
   process.env.PATH = `${process.env.INSTRUMENTED_NODE_LOC}:${process.env.PATH}`;
 }
