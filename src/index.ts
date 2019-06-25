@@ -22,6 +22,9 @@ if (DEBUG) {
 }
 
 const spawnArgs = [ '-c', `${args.cmd} ${pArgs}` ];
+if (process.env.INJECT_NODEPROF){
+  process.env.PATH = `${process.env.INSTRUMENTED_NODE_LOC}:${process.env.PATH}`;
+}
 
 //@ts-ignore
 const p = spawn('bash', spawnArgs,
