@@ -3,7 +3,7 @@ import * as argv from 'yargs';
 
 const DEBUG = false;
 
-function forceKillProcess(p: ChildProcess) { process.kill(-p.pid, 'SIGKILL'); }
+function forceKillProcess(p: ChildProcess) { process.kill(-p.pid, 'SIGINT'); }
 
 const args =
     argv.usage(
